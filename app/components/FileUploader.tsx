@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 import { formatSize } from "~/lib/utils";
 
@@ -18,19 +18,18 @@ function FileUploader({ onFileSelect }: FileUploaderProps) {
 
   const maxFileSize = 20 * 1024 * 1024;
 
-  const { getRootProps, getInputProps, isDragActive, acceptedFiles } =
-    useDropzone({
-      onDrop,
-      multiple: false,
-      accept: {
-        "application/pdf": [".pdf"],
-        "appliction/png": [".png"],
-        "appliction/gif": [".gif"],
-        "appliction/jpeg": [".jpeg"],
-        "appliction/svg": [".svg"],
-      },
-      maxSize: 20 * 1024 * 1024,
-    });
+  const { getRootProps, getInputProps, acceptedFiles } = useDropzone({
+    onDrop,
+    multiple: false,
+    accept: {
+      "application/pdf": [".pdf"],
+      "appliction/png": [".png"],
+      "appliction/gif": [".gif"],
+      "appliction/jpeg": [".jpeg"],
+      "appliction/svg": [".svg"],
+    },
+    maxSize: 20 * 1024 * 1024,
+  });
 
   const file = acceptedFiles[0] || null;
 
