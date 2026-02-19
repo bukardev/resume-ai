@@ -6,7 +6,6 @@ interface Job {
 }
 
 interface Resume {
-  length: number;
   id: string;
   companyName?: string;
   jobTitle?: string;

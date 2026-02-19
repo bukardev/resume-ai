@@ -23,10 +23,6 @@ function FileUploader({ onFileSelect }: FileUploaderProps) {
     multiple: false,
     accept: {
       "application/pdf": [".pdf"],
-      "appliction/png": [".png"],
-      "appliction/gif": [".gif"],
-      "appliction/jpeg": [".jpeg"],
-      "appliction/svg": [".svg"],
     },
     maxSize: 20 * 1024 * 1024,
   });
