@@ -20,9 +20,10 @@ function FileUploader({ onFileSelect }: FileUploaderProps) {
 
   const { getRootProps, getInputProps, acceptedFiles } = useDropzone({
     onDrop,
-    multiple: false,
+    multiple: true,
     accept: {
-      "application/pdf": [".pdf"],
+      "application/png": [".png"],
+      "image/jpeg": [".jpg", ".jpeg"],
     },
     maxSize: 20 * 1024 * 1024,
   });
@@ -39,7 +40,7 @@ function FileUploader({ onFileSelect }: FileUploaderProps) {
               className="uploader-selected-file"
               onClick={(e) => e.stopPropagation()}
             >
-              <img src="/images/pdf.png" alt="pdf" className="size-10" />
+              <img src="/images/pngtree-flat-file-image_1128024.jpg" alt="pdf" className="size-10" />
               <div className="flex items-center space-x3">
                 <div>
                   <p className="text-sm text-gray-700 font-medium truncate max-w-xs">
@@ -69,7 +70,7 @@ function FileUploader({ onFileSelect }: FileUploaderProps) {
                 and drop
               </p>
               <p className="text-lg text-gray-500">
-                PDF (max {formatSize(maxFileSize)})
+                PNG (max {formatSize(maxFileSize)})
               </p>
             </div>
           )}

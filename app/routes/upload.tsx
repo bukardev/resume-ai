@@ -35,13 +35,13 @@ const upload = () => {
     const uploadedFile = await fs.upload([file]);
     if (!uploadedFile) return setStatusText("Error: failed to upload file");
 
-    setStatusText("Converting to image...");
-    const imageFile = await convertPdfToImage(file);
-    if (!imageFile.file)
-      return setStatusText("Error: failed to convert PDF to image");
+    //setStatusText("Converting to image...");
+    //const imageFile = await convertPdfToImage(file);
+    //if (!imageFile.file)
+    //return setStatusText("Error: failed to convert PDF to image");
 
     setStatusText("Uploading the image...");
-    const uploadedImage = await fs.upload([imageFile.file]);
+    const uploadedImage = await fs.upload([file]);
     if (!uploadedImage) return setStatusText("Error: failed upload image");
 
     setStatusText("Preparing data...");
