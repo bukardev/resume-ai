@@ -16,8 +16,9 @@ const resume = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!auth.isAuthenticated) navigate(`/auth?next=/resume/${id}`);
-  }, [auth.isAuthenticated]);
+    if (!isLoading && !auth.isAuthenticated)
+      navigate(`/auth?next=/resume/${id}`);
+  }, [isLoading]);
 
   useEffect(() => {
     const loadResume = async () => {
@@ -76,7 +77,7 @@ const resume = () => {
           <h2 className="font-4xl text-black font-bold">Resume Review</h2>
           {feedback ? (
             <div className="flex flex-col gap-8 animate-in fade-in duration-1000">
-              Summary ATS Details
+              sumary details
             </div>
           ) : (
             <img src="/images/resume-scan-2.gif" className="w-full" />
